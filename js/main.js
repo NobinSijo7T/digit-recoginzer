@@ -28,9 +28,19 @@ function init()
         // add subtle pulse animation via CSS class
         if (canvas.classList)
             canvas.classList.add('pulse');
-        // initialize tab behavior for How This Works (if present)
-        try{ setupTabs(); }catch(e){}
+            // initialize tab behavior for How This Works (if present)
+            try{ setupTabs(); }catch(e){}
+            // hide page loader when ready
+            try{ hideLoader(); }catch(e){}
 }
+
+    function hideLoader(){
+        var loader = document.getElementById('page-loader');
+        if(!loader) return;
+        loader.setAttribute('aria-hidden','true');
+        // remove from DOM after transition
+        setTimeout(function(){ if(loader.parentNode) loader.parentNode.removeChild(loader); }, 420);
+    }
 
 // Tab handling: wire tabs to panels
 function setupTabs(){

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Model Files</title>
+</head>
+<body>
+    <h1>Verify Model Files</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function verifyFiles() {
+            const results = document.getElementById('results');
+            const files = [
+                'models_js_fixed/model.json',
+                'models_js/weights.bin'
+            ];
+            
+            for (const file of files) {
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        const content = await response.text();
+                        results.innerHTML += `<p style="color: green;">✓ ${file} - OK (${response.status}) - Size: ${content.length} bytes</p>`;
+                    } else {
+                        results.innerHTML += `<p style="color: red;">✗ ${file} - Error (${response.status})</p>`;
+                    }
+                } catch (error) {
+                    results.innerHTML += `<p style="color: red;">✗ ${file} - Failed (${error.message})</p>`;
+                }
+            }
+        }
+        
+        // Run the verification when page loads
+        window.addEventListener('load', verifyFiles);
+    </script>
+</body>
+</html>

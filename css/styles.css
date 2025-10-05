@@ -1,0 +1,353 @@
+/* Some CSS styling */
+
+#sketchpadapp {
+    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#clear_button{
+  margin-left: 15px;
+  font-weight: bold;
+  color: var(--accent);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+#confidence{
+  font-family: 'Michroma', sans-serif;
+  margin-top: 7.5%;
+  color: var(--muted);
+}
+
+#content{
+  margin: 0 auto;
+  padding: 2% 15%;
+  padding-bottom: 0;
+}
+
+.welcome{
+  text-align: center;
+  position: relative;
+  color: var(--text);
+  background-color: transparent;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-weight: bold;
+  font-family: 'Aldrich', sans-serif;
+}
+
+#footer{
+  text-align: center;
+  background-color: transparent;
+  color: var(--muted);
+  padding-top: 1%;
+  padding-bottom: 0%;
+}
+
+
+#predict_button{
+  margin-right: 15px;
+  color: var(--accent-foreground);
+  font-weight: bold;
+  background: var(--accent-dark);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+#prediction_heading{
+  font-family: 'Aldrich', sans-serif;
+  margin-top: 7.5%;
+  color: var(--text);
+}
+
+#result{
+  font-family: 'Michroma', sans-serif;
+  font-size: 5rem;
+  color: var(--accent);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+#sketchpad {
+  height:250px;
+  width:250px;
+  border:2px solid rgba(255,255,255,0.06);
+  border-radius:8px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+
+#source{
+  padding: 0 100px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#title{
+  padding: 1.5% 15%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn {
+    font-size: 15px;
+    padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+    background: #eee;
+    border: 1px solid #888;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.buttons_div{
+  margin-bottom: 30px;
+}
+
+.heading{
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  display: inline;
+}
+
+.leftside{
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 4%;
+  /* padding-left: 10%; */
+}
+
+
+.predicted_answer{
+  text-align: center;
+  margin: 0 auto;
+  padding: 3% 5%;
+  padding-top: 0;
+  /* padding-left: 10%; */
+}
+
+.responsive_img{
+  width: 75%;
+    height: 10vw;
+    object-fit: cover;
+}
+
+.social-media-icons{
+  display: none; /* hide any leftover social icons */
+}
+
+.source-column{
+  padding: 3% 2%;
+}
+
+.source-h2{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+}
+
+hr {
+  border: dotted #808080 6px;
+  border-bottom: none;
+  width: 4%;
+  margin: 50px auto;
+  margin-bottom: 100px;
+}
+
+a {
+  color: var(--accent-foreground);
+  text-decoration: none;
+}
+p{
+  font-family: 'Michroma', sans-serif;
+  margin-top: 1%;
+  color: var(--muted);
+}
+
+/* Theme variables */
+:root{
+  --bg: #071126; /* very dark navy */
+  --surface: #0b1a2b;
+  --text: #E6F0FF; /* pale blue-white */
+  --muted: #9fb3d6;
+  --accent: #3aa0ff; /* bright blue */
+  --accent-dark: linear-gradient(180deg,#114b82,#0b3a66);
+  --accent-foreground: #eaf6ff;
+}
+
+/* Page background and basic typography */
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Michroma', sans-serif;
+  margin: 0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Subtle global fade-in */
+body > *{
+  animation: fadeIn 420ms ease both;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform: translateY(6px);} 
+  to{opacity:1; transform: translateY(0);} 
+}
+
+/* Model info card */
+.model-info{
+  padding: 28px 12%;
+}
+.model-info .container{
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 10px;
+  padding: 18px 22px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 28px rgba(2,8,20,0.55);
+}
+.model-info__title{
+  font-family: 'Aldrich', sans-serif;
+  color: var(--text);
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+}
+.model-info__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Michroma', sans-serif;
+  color: var(--muted);
+}
+.model-info__list li{
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+.model-info__list li:last-child{
+  border-bottom: none;
+}
+
+/* small entrance animation for the card */
+.model-info .container{
+  animation: cardIn 520ms cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes cardIn{
+  from{ opacity: 0; transform: translateY(8px) scale(.995);} 
+  to{ opacity: 1; transform: translateY(0) scale(1);} 
+}
+
+/* How This Works section */
+.how-this-works{
+  padding: 36px 8%;
+}
+.how-title{
+  font-family: 'Aldrich', sans-serif;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.how-intro{
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-family: 'Michroma', sans-serif;
+}
+
+.tabs{ display:flex; gap:8px; margin-bottom: 18px; }
+.tab{
+  background: rgba(255,255,255,0.02);
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Michroma', sans-serif;
+}
+.tab.active{ background: var(--accent); color: var(--accent-foreground); }
+
+.code-panels{ display:grid; gap:18px; grid-template-columns: 1fr; }
+.code-panel{
+  background: #061226; /* slightly lighter than bg */
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+}
+.code-panel h4{ font-family: 'Aldrich', sans-serif; color: var(--text); margin:0 0 8px 0; }
+.code-panel pre{ background: transparent; color: #cfe9ff; padding: 12px; overflow:auto; border-radius:6px; }
+.code-panel code{ font-family: 'Source Code Pro', monospace; font-size: 13px; color: #cfe9ff; }
+.code-panel .caption{ color: var(--muted); margin-top:8px; font-family: 'Michroma', sans-serif; }
+
+@media (min-width: 900px){
+  .code-panels{ grid-template-columns: 1fr 1fr; }
+  .code-panel#panel-prediction{ grid-column: span 2; }
+}
+
+/* Hidden panel helper (controlled by JS) */
+.code-panel.hidden{ display: none !important; }
+
+/* Button hover interactions */
+.btn:hover, #predict_button:hover, #clear_button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(10,40,80,0.45);
+}
+
+/* Canvas subtle pulse when idle */
+#sketchpad.pulse{
+  animation: pulse 3.6s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0%{ box-shadow: 0 6px 18px rgba(2,6,23,0.6);} 
+  50%{ box-shadow: 0 10px 30px rgba(3,13,40,0.7);}
+  100%{ box-shadow: 0 6px 18px rgba(2,6,23,0.6);} 
+}
+
+/* Card entrance animation */
+@keyframes popIn{
+  from{ opacity: 0; transform: translateY(10px) scale(.995); }
+  60%{ opacity: 1; transform: translateY(-4px) scale(1.01); }
+  to{ opacity: 1; transform: translateY(0) scale(1); }
+}
+.code-panel.pop-in{
+  animation: popIn 380ms cubic-bezier(.2,.85,.2,1) both;
+}
+
+/* Result number pop */
+@keyframes resultPop{
+  0%{ transform: scale(.84); opacity: 0.0; }
+  60%{ transform: scale(1.08); opacity: 1; }
+  100%{ transform: scale(1); opacity: 1; }
+}
+.result-pop{
+  display: inline-block;
+  animation: resultPop 420ms cubic-bezier(.2,.9,.2,1) both;
+}
+
+/* small stagger for panels when many are shown (optional) */
+.code-panels .code-panel:nth-child(1){ --delay: 0ms; }
+.code-panels .code-panel:nth-child(2){ --delay: 80ms; }
+.code-panels .code-panel:nth-child(3){ --delay: 160ms; }
+
+/* Soft shimmer for primary button */
+.btn.shimmer{ position:relative; overflow:hidden; }
+.btn.shimmer::after{
+  content: '';
+  position: absolute; left: -40%; top: 0; width: 40%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.03), rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+  transform: skewX(-18deg);
+  transition: left 420ms ease;
+  pointer-events:none;
+  opacity:0.9;
+}
+.btn.shimmer:hover::after{ left: 140%; }
+
+@media (min-width: 720px) {
+  .leftside{
+    padding-left: 10%;
+  }
+}

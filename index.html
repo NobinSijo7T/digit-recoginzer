@@ -58,14 +58,25 @@
       <div class="row">
         <div class="leftside">
 
-          <div class="">
-            <canvas id="sketchpad" height="200" width="200">
-            </canvas>
+          <div class="sketchpad-wrapper">
+            <canvas id="sketchpad" height="200" width="200"></canvas>
           </div>
 
           <div class="buttons_div">
             <button type="button" class="btn btn-dark" id="predict_button">Predict</button>
             <button type="button" class="btn btn-dark" id="clear_button">&nbsp Clear &nbsp</button>
+          </div>
+
+          <div class="color-controls">
+            <label for="color_picker" class="color-label">Pen color</label>
+            <input type="color" id="color_picker" value="#ffffff" aria-label="Choose pen color">
+            <div class="swatches" aria-hidden="false">
+              <button class="swatch" data-color="#ffffff" style="background:#ffffff" title="White"></button>
+              <button class="swatch" data-color="#3aa0ff" style="background:#3aa0ff" title="Blue"></button>
+              <button class="swatch" data-color="#ff6b6b" style="background:#ff6b6b" title="Red"></button>
+              <button class="swatch" data-color="#ffd166" style="background:#ffd166" title="Yellow"></button>
+              <button class="swatch" data-color="#8be04b" style="background:#8be04b" title="Green"></button>
+            </div>
           </div>
         </div>
 

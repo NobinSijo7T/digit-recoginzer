@@ -1,6 +1,7 @@
 var canvas,ctx;
 var mouseX,mouseY,mouseDown=0;
 var touchX,touchY;
+var penColor = '#ffffff';
 
 // fucnction for interacting with canvas
 
@@ -28,6 +29,15 @@ function init()
         // add subtle pulse animation via CSS class
         if (canvas.classList)
             canvas.classList.add('pulse');
+        // color controls
+        var colorInput = document.getElementById('color_picker');
+        if(colorInput){
+            colorInput.addEventListener('input', function(e){ penColor = e.target.value; });
+        }
+        var swatches = document.querySelectorAll('.swatch');
+        if(swatches){
+            swatches.forEach(function(s){ s.addEventListener('click', function(){ penColor = s.getAttribute('data-color'); if(colorInput) colorInput.value = penColor; }); });
+        }
             // initialize tab behavior for How This Works (if present)
             try{ setupTabs(); }catch(e){}
             // hide page loader when ready
@@ -78,8 +88,8 @@ function draw(ctx,x,y,size,isDown)
     if(isDown)
     {   //to inform canvas user is about to draw
         ctx.beginPath();
-        //to set color of line
-        ctx.strokeStyle = "white";
+    //to set color of line
+    ctx.strokeStyle = penColor;
         //set width of line      
         ctx.lineWidth = '15'; 
         //.linejoin : set connection between two line 
